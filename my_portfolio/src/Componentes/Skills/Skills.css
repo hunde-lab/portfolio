@@ -1,0 +1,111 @@
+/* Dark Mode Background */
+body.dark .hero{
+  background: linear-gradient(135deg,#0f172a,#1e3a8a);
+}
+
+/* Light Mode Background */
+body.light .hero{
+  background: linear-gradient(135deg,#93c5fd,#3b82f6);
+  color: #0f172a;
+}
+
+.skills-section{
+  padding:80px 10%;
+  text-align:center;
+}
+
+.skills-section h2{
+  font-size:2.5rem;
+  margin-bottom:50px;
+  color:#facc15;
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+  gap:30px;
+  row-gap:40px;
+}
+
+/* Skill Card */
+.skill-card{
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+}
+
+.skill-card:hover{
+  transform:scale(1.05);
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+  border: #facc15 2px dashed;
+}
+
+/* Icon */
+.skill-icon{
+  font-size:2rem;
+  color:#facc15;
+  margin-bottom:10px;
+}
+
+/* Skill Name */
+.skill-card h3{
+  font-size:1.2rem;
+  margin-bottom:10px;
+}
+
+/* Progress Bar */
+.skill-bar{
+  width:100%;
+  height:10px;
+  background: rgba(255,255,255,0.2);
+  border-radius:5px;
+  overflow:hidden;
+  position: relative;
+}
+
+.skill-level{
+  height:100%;
+  background:#6366f1;
+  border-radius:5px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  padding-right:5px;
+  font-weight:bold;
+  color:white;
+  font-size:0.8rem;
+}
+
+/* Percentage text */
+.skill-percent{
+  font-size:0.8rem;
+  color:white;
+}
+
+/* Light mode */
+body.light .skill-card{
+  background: rgba(255,255,255,0.15);
+}
+body.light .skill-level{
+  background:#3b82f6;
+  color:#0f172a;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+  .skills-grid{
+    grid-template-columns:repeat(2, 1fr); /* two columns for tablet */
+  }
+}
+
+@media(max-width:480px){
+  .skills-grid{
+    grid-template-columns:1fr; /* single column for mobile */
+  }
+  .skills-section h2{ font-size:2rem; }
+  .skill-percent{ font-size:0.7rem; }
+}
